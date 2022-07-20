@@ -2,9 +2,7 @@
 
 // Definir una clase
 class Producto {
-    public $nombre;
-    public $precio;
-    public $disponible;
+    
 }
 
 $producto = new Producto();

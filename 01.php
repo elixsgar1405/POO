@@ -2,7 +2,10 @@
 
 // Definir una clase
 class Producto {
-    
+    public function __construct()
+    {
+        
+    }
 }
 
 $producto = new Producto();

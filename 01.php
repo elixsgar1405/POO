@@ -6,20 +6,20 @@ include 'includes/header.php';
 class Producto {
     public function __construct(public string $nombre, public int $precio, public bool $disponible)
     {
-        $this->nombre = $nombre;
-        $this->precio = $precio;
-        $this->disponible = $disponible;
     }
 }
 
 $producto = new Producto('Monitor', 3500, true);
 
+echo "El nombre de producto es " . $producto->nombre . " y su precio es de " . $producto->precio;
 
 echo "<pre>";
 var_dump($producto);
 echo "</pre>";
 
 $producto2 = new Producto('PC', 12000, true);
+
+echo "El nombre de producto es " . $producto2->nombre . " y su precio es de " . $producto2->precio;
 
 echo "<pre>";
 var_dump($producto2);

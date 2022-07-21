@@ -2,25 +2,22 @@
 
 // Definir una clase
 class Producto {
-    public function __construct()
+    public function __construct(public string $nombre, public int $precio, public bool $disponible)
     {
-        
+        $this->nombre = $nombre;
+        $this->precio = $precio;
+        $this->disponible = $disponible;
     }
 }
 
-$producto = new Producto();
-$producto->nombre = 'PC';
-$producto->precio = 1200;
-$producto->disponible = true;
+$producto = new Producto('Monitor', 3500, true);
+
 
 echo "<pre>";
 var_dump($producto);
 echo "</pre>";
 
-$producto2 = new Producto();
-$producto2->nombre = 'Monitor';
-$producto2->precio = 500;
-$producto2->disponible = true;
+$producto2 = new Producto('PC', 12000, true);
 
 echo "<pre>";
 var_dump($producto2);

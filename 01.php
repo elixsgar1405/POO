@@ -10,8 +10,7 @@ class Producto {
     // PROTECTED - SE PUEDE ACCEDER SOLO EN LA CLASE
     // PRIVATE - SOLO MIEMBROS DE LA MISMA CLASE PUEDEN ACCEDER A EL
 
-
-    public function __construct(public string $nombre, public int $precio, public bool $disponible)
+    public function __construct(protected string $nombre, public int $precio, public bool $disponible)
     {
     }
 
@@ -22,6 +21,8 @@ class Producto {
 
 $producto = new Producto('Monitor', 3500, true);
 $producto->mostrarProducto();
+
+$producto->nombre = 'Nuevo';
 
 echo "<pre>";
 var_dump($producto);

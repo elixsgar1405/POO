@@ -6,14 +6,18 @@ include 'includes/header.php';
 
 class Producto {
 
-    public static $imagen = "Imagen.jpg";
+    public $imagen;
+    public static $imagenPlaceholder = "Imagen.jpg";
 
-    public function __construct(protected string $nombre, public int $precio, public bool $disponible)
+    public function __construct(protected string $nombre, public int $precio, public bool $disponible, string $imagen)
     {
+        if($imagen) {
+            self::$imagenPlaceholder = $imagen;
+        }
     }
 
     public static function obtenerImagenProducto() {
-        return self::$imagen;
+        return self::$imagenPlaceholder;
     }
 
     public static function obtenerProducto() {
@@ -33,22 +37,23 @@ class Producto {
     }
 }
 
-echo Producto::obtenerImagenProducto();
-
-$producto = new Producto('Monitor', 3500, true);
+$producto = new Producto('Monitor', 3500, true, '');
 // $producto->mostrarProducto();
 echo $producto->getNombre();
 $producto->setNombre('Nuevo');
+
+echo $producto->obtenerImagenProducto();
 
 echo "<pre>";
 var_dump($producto);
 echo "</pre>";
 
-$producto2 = new Producto('PC', 12000, true);
+$producto2 = new Producto('PC', 12000, true, 'PC.jpg');
 // $producto2->mostrarProducto();
 
 echo $producto2->getNombre();
 
+echo $producto2->obtenerImagenProducto();
 
 // echo "<pre>";
 // var_dump($producto2);
